@@ -1,0 +1,116 @@
+# How to Run the Lesson Plan Generator Project
+
+This guide provides step-by-step instructions to set up and run this project on your local machine.
+
+## 1. Prerequisites
+
+Before you begin, ensure you have the following software installed:
+
+- **Node.js:** Required for both the frontend and backend. You can download it from [nodejs.org](https://nodejs.org/).
+- **MySQL:** A database to store user and lesson plan data. You can install it via [MySQL Community Server](https://dev.mysql.com/downloads/mysql/).
+- **Git:** For cloning the repository.
+- **ngrok:** To expose your local backend server to the internet so your mobile app can access it. Sign up for a free account at [ngrok.com](https://ngrok.com/).
+- **Expo Go App:** Install the Expo Go app on your iOS or Android device to run the mobile application.
+
+## 2. Setup Instructions
+
+### Step 2.1: Clone the Repository
+Open your terminal and clone the project repository:
+```bash
+git clone <repository-url>
+cd LessonPlanGenerator
+```
+
+### Step 2.2: Configure the Backend
+
+1.  **Navigate to the server directory:**
+    ```bash
+    cd server
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up your MySQL Database:**
+    - Start your MySQL server.
+    - Connect to MySQL and create a new database. You can name it whatever you like (e.g., `lesson_planner_db`).
+    ```sql
+    CREATE DATABASE lesson_planner_db;
+    ```
+
+4.  **Create the environment file:**
+    - In the `server` directory, create a new file named `.env`.
+    - Add the following content to the `.env` file, replacing the placeholder values with your actual credentials.
+
+    ```env
+    # MySQL Database Configuration
+    DB_HOST=127.0.0.1
+    DB_USER=your_mysql_username
+    DB_PASSWORD=your_mysql_password
+    DB_NAME=lesson_planner_db
+
+    # OpenAI API Key
+    OPENAI_API_KEY=your_openai_api_key_here
+    ```
+    *   Get your OpenAI API key from [platform.openai.com/api-keys](https://platform.openai.com/api-keys).
+
+### Step 2.3: Configure the Frontend
+
+1.  **Navigate back to the root project directory:**
+    ```bash
+    cd ..
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+## 3. Running the Application
+
+You will need to open **three separate terminals** for this part.
+
+### Terminal 1: Start the Backend Server
+
+- Make sure you are in the `server` directory.
+- Run the start command. This will also automatically create the necessary tables in your database.
+```bash
+cd server
+npm start
+```
+- You should see the message: `Server listening at http://localhost:3000`.
+
+### Terminal 2: Start the ngrok Tunnel
+
+- Open a new terminal.
+- Run the following command to create a secure tunnel to your backend server running on port 3000.
+```bash
+ngrok http 3000
+```
+- ngrok will display a "Forwarding" URL (e.g., `https://random-string.ngrok-free.dev`). **Copy this HTTPS URL.**
+
+### Terminal 3: Update and Run the Frontend
+
+1.  **Update the API URL:**
+    - You must replace the placeholder API endpoint in the frontend files with the ngrok URL you just copied.
+    - Open the following files and replace the `API_URL` constant with your ngrok URL:
+        - `app/(auth)/login.js`
+        - `app/(auth)/register.js`
+        - `app/(tabs)/create.js`
+        - `app/(tabs)/index.js`
+        - `app/PlanScreen.js`
+    - **Example:** Change `const API_URL = 'https://unascendent-underfoot-tessa.ngrok-free.dev';` to `const API_URL = 'https://your-new-ngrok-url.ngrok-free.dev';`
+
+2.  **Start the Expo development server:**
+    - Make sure you are in the root project directory.
+    ```bash
+    npx expo start
+    ```
+
+3.  **Run the app on your phone:**
+    - A QR code will appear in the terminal.
+    - Open the Expo Go app on your phone and scan the QR code to launch the application.
+
+You should now be able to register, log in, and use the Lesson Plan Generator app.

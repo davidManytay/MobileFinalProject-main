@@ -1,0 +1,18 @@
+Unmatched Route
+Page could not be found.
+http://localhost:8082
+Go back
+•
+Sitemap
+
+
+Logs for your project will appear below. Press Ctrl+C to exit.
+λ Bundled 901ms node_modules\expo-router\node\render.js (443 modules)     
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 81.9% (675/746)    
+Web Bundled 1763ms node_modules\expo-router\entry.js (816 modules)
+Web Bundled 210ms node_modules\expo-router\entry.js (596 modules)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 26ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 186ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 30ms node_modules\expo-router\entry.js (1 module)

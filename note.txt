@@ -1,0 +1,71 @@
+npm start:
+PS D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\server> npm start
+
+> server@1.0.0 start
+> nodemon index.js  
+
+[nodemon] 3.1.11
+[nodemon] to restart at any time, enter `rs`  
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+[dotenv@17.2.3] injecting env (6) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+Users table created or already exists.
+Lesson plans table created or already exists.
+Server listening at http://localhost:3000
+
+==============================================
+
+npm run tunnel:
+PS D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\server> npm run tunnel
+
+> server@1.0.0 tunnel
+> ngrok http 3000
+ngrok                                                                                                                                                                                          (Ctrl+C to quit)
+
+Session Status                connecting
+Version                       3.33.0
+Web Interface                 http://127.0.0.1:4040
+
+Connections                   ttl     opn     rt1     rt5     p50     p90     
+�  Block threats before they reach your services with new WAF actions → https://ngrok.com/r/waf                                                                                                               
+
+Session Status                online
+Account                       lamostedave244@gmail.com (Plan: Free)
+Version                       3.33.0
+Region                        Asia Pacific (ap)
+Latency                       52ms
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    https://unascendent-underfoot-tessa.ngrok-free.dev -> http://localhost:3000
+
+Connections                   ttl     opn     rt1     rt5     p50     p90     
+                              1       0       0.00    0.00    10.59   10.59   
+
+HTTP Requests
+-------------
+
+08:36:03.218 +08 POST    /api/login             200 OK
+08:36:02.650 +08 POST    /api/login             200 OK
+08:36:01.344 +08 POST    /api/login             200 OK
+08:35:58.802 +08 POST    /api/login             200 OK
+08:35:58.685 +08 OPTIONS /api/login             204 No Content
+
+==========================================================
+
+npx expo start --tunnel:
+Logs for your project will appear below. Press Ctrl+C to exit.
+λ Bundled 1296ms node_modules\expo-router\node\render.js (827 modules)    
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.5% (815/817)
+"shadow*" style props are deprecated. Use "boxShadow".
+λ  WARN  Layout children must be of type Screen, all other children are ignored. To use custom children, create a custom <Layout />. Update Layout Route at: "app/_layout" 
+  console.warn (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\expo\node_modules\@expo\cli\src\start\server\serverLogLikeMetro.ts:161:21)
+  flattenChild (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\expo-router\build\layouts\withLayoutContext.js:91:21)
+  apply (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\expo-router\build\layouts\withLayoutContext.js:94:55)
+  call (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\react\cjs\react.development.js:745:25)
+  callback (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\react\cjs\react.development.js:455:21)
+  mapIntoArray (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\react\cjs\react.development.js:356:20)
+  mapIntoArray (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\react\cjs\react.development.js:401:32)
+  mapChildren (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\react\cjs\react.development.js:454:7)
+  Object.forEach (D:\Documents\Studies\SY_2025-2026\ITMSD 1\LessonPlanGenerator\LessonPlanGenerator\node_modules\react\cjs\react.development.js:742:9)
+Web Bundled 2330ms node_modules\expo-router\entry.js (817 modules)
+Web Bundled 235ms node_modules\expo-router\entry.js (805 modules)
